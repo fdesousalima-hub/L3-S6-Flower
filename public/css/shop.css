@@ -1,0 +1,29 @@
+.intervale{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 400px;
+    margin: 50px;
+    padding: 20px;
+    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.35);
+    background-color: rgb(153, 233, 189);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.bouquets{
+    margin: 200px;
+    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.35);
+    background-color: rgb(153, 233, 189);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+.bouquets ul li{
+    display: inline-block;
+    margin: 20px;
+}
+.bouquets ul li a{
+    text-decoration: none;
+}

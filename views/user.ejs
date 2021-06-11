@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/commands.css">
+</head>
+
+<body>
+    <%- include ('partials/header') %>
+        <table>
+
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Content
+                </th>
+                <th>
+                    Custom
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Price
+                </th>
+            </tr>
+            <% for (var i=0; i < commands.length; i++) { %>
+                <tr>
+                    <%- include ('partials/command',{i:i}) %>
+                </tr>
+                <% } %>
+        </table>
+</body>
+
+</html>

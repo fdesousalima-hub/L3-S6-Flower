@@ -1,0 +1,34 @@
+.total_custom{
+    position: absolute;
+    width: 200px;
+    left: 90%;
+    top: 25%;
+    transform: translate(-75%, -15%);
+}
+input[type="submit"]{
+    padding: 9px 25px;
+    background: #0088a9;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+input[type="number"]{
+    width: 4em;
+}
+input[type="text"]{
+    width: 4em;
+}
+img{
+    height: 300px;
+}
+.flowers{
+    list-style: none;
+    padding: 40px;
+    width: 85%;
+}
+.flowers li{
+    display: inline-block;  
+    margin: 20px;
+}
+

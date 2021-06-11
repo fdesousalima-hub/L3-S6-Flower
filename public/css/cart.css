@@ -1,0 +1,20 @@
+.cart{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 20px;
+    background-color: rgb(153, 233, 189);
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+img{
+    width: 100px;
+}
+.cart li{
+    display: inline-block;
+}   
+input[type="number"]{
+    width: 4em;
+}

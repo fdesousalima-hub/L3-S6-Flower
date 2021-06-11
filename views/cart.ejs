@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/cart.css">
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/javascript/cart.js"></script>
+</head>
+
+<body>
+    <%- include ('partials/header') %>
+        <div class="cart">
+            <h2>Your cart, <%= username %>
+            </h2>
+            <form action="validate" method="post">
+                <ul>
+                    <% var i;for (i=0; i < bouquets.length; i++) { %>
+                        <li id="command">
+                            <div>
+                                <img src="data:image/jpeg;base64,<%=  new Buffer(bouquets[i].image).toString('base64') %>"
+                                    alt="Image Bouquet"><br>
+                                <input class="amount_bouquet" type="number" name="<%= bouquets[i].id_bouquet %>" min="0"
+                                    value="<%= bouquets_amount[bouquets[i].id_bouquet] %>" />
+                                <h4>
+                                    <%= bouquets[i].name %>
+                                </h4>
+                                <p>Price:</p>
+                                <input type="hidden" class="price_for_one" value="<%= bouquets[i].price %>">
+                                <p class="price_bouquet">
+                                    <%= bouquets[i].price %>€
+                                </p>
+                            </div>
+
+                        </li>
+                        <% } %>
+                </ul>
+                <h3>Custom bouquets</h3>
+                <ul>
+                    <% var i;for (i=0; i < custom.length; i++) {%>
+                        <li id="command">
+                            <p>
+                                <%= i %>
+                            </p>
+                            <input class="amount_bouquet" type="number" name="custom_<%= i %>" min="0"
+                                value="<%= custom[i].amount %>" />
+                            <%for(var key in custom[i]){ if (key !=="amount" && key !=="price_total" ) { %>
+                                <p>
+                                    <%=custom[i][key]+" "+key %>
+                                </p>
+                                <%  }} %>
+                                <p>Price:</p>
+                                <input type="hidden" class="price_for_one" value="<%= custom[i].price_total %>">
+                                        <p class="price_bouquet">
+                                            <%=custom[i].price_total%>
+                                        </p>
+                        </li>
+
+                        <% } %>
+                </ul>
+                <div id="div_total">
+                    <p> Price Total:</p>
+                    <input type="text" id="total" readonly name="command_total">
+                    <input type="submit" value="Pay">
+                </div>
+            </form>
+        </div>
+
+</body>
+
+</html>

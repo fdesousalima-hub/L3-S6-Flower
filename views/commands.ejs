@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/commands.css">
+</head>
+
+<body>
+    <%- include ('partials/header') %>
+        <table>
+
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Content
+                </th>
+                <th>
+                    Custom
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Finish?
+                </th>
+            </tr>
+            <% for (var i=0; i < commands.length; i++) { %>
+                <tr>
+                    <%- include ('partials/command',{i:i}) %>
+                        <% if(commands[i].status==="preparation" ){ %>
+                            <td>
+                                <form action="/commands/<%= commands[i].id %> " method="post">
+                                    <input type="submit" name="id" value="finish" />
+                                </form>
+                            </td>
+                            <% }else{ %>
+                                <td></td>
+                            <% } %>
+                </tr>
+                <% } %>
+        </table>
+
+</body>
+
+</html>

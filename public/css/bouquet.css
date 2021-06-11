@@ -1,0 +1,29 @@
+.bouquet{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: 50px;
+    padding: 20px;
+    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.35);
+    background-color: rgb(153, 233, 189);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    align-items: center;
+    
+}
+.info{
+    vertical-align: middle;
+    display: inline-block;
+}
+input[type="submit"]{
+    padding: 9px 25px;
+    background: #0088a9;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+input[type="number"]{
+    width: 4em;
+}

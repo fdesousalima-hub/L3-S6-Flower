@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/home.css">
+    <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="/javascript/home.js"></script>
+
+</head>
+
+<body>
+    <%- include ('partials/header') %>
+        <div class="slide">
+            <ul style="width: <%= 100*images.length %>%;">
+                <% for (var i=0; i < images.length; i++) { %>
+                    <li>
+                        <img src="data:image/jpeg;base64,<%=  new Buffer(images[i].image).toString('base64') %>"
+                            alt="Image Bouquet">
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+</body>
+
+</html>

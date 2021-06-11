@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('partials/head') %>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/zoom.css">
+        <link rel="stylesheet" type="text/css" href="/css/custom.css">
+        <script src="http://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="/javascript/custom.js"></script>
+</head>
+
+<body>
+    <%- include ('partials/header') %>
+        <form action='' method="post">
+            <div>
+                <ul class="flowers">
+                    <% var i;for (i=0; i < flowers.length; i++) { %>
+                        <li>
+                            <div>
+                                <h4>
+                                    <%= flowers[i].name %>
+                                </h4>
+                                <img src="data:image/jpeg;base64,<%=  new Buffer(flowers[i].image).toString('base64') %>"
+                                    alt="Image Flower">
+                                <p>Price: </p>
+                                <p class="price_flower">
+                                    <%= flowers[i].price %>€
+                                </p>
+                                <input class="input_flower" type="number" name="<%= flowers[i].name %>" min="0"
+                                    value="0" />
+                            </div>
+                        </li>
+                        <% } %>
+                </ul>
+            </div>
+            <div class="total_custom">
+                <p>Amount:</p>
+                <input type="number" name="amount" min="1" value="1" />
+                <input type="submit" value="Add to card">
+                <p>Total price:</p>
+                <input type="text" class="price_total" readonly name="price_total">
+            </div>
+        </form>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('partials/head') %>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="/css/zoom.css">
+        <link rel="stylesheet" type="text/css" href="/css/shop.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="/javascript/shop.js"></script>
+</head>
+
+<body>
+    <%- include ('partials/header') %>
+        <div class="intervale">
+            <label for="price">Price range:</label>
+            <input type="text" id="price" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            <div id="slider-range"></div>
+        </div>
+        <div class="bouquets">
+            <ul>
+                <% var i;for (i=0; i < bouquets.length; i++) { %>
+                    <li id="bouquet">
+                        <a href="shop/<%= bouquets[i].id_bouquet %>">
+                            <div>
+
+                                <h4>
+                                    <%= bouquets[i].name %>
+                                </h4>
+                                <img src="data:image/jpeg;base64,<%=  new Buffer(bouquets[i].image).toString('base64') %>"
+                                    alt="Image Bouquet">
+
+                                <div class="price">
+                                    <p>Price: </p>
+                                    <p class="price_str">
+                                        <%= bouquets[i].price %>€
+                                    </p>
+                                </div>
+                            </div>
+
+                        </a>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+</body>
+
+</html>

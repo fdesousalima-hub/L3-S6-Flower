@@ -1,0 +1,37 @@
+<td>
+    <%= commands[i].date %>
+</td>
+<% if (commands[i].bouquet) { %>
+    <td>
+        <%for (var j=0; j < commands[i].bouquet.length; j++) { %>
+            <img src="data:image/jpeg;base64,<%=  new Buffer(commands[i].bouquet[j].image).toString('base64') %>"
+                alt="Image Bouquet">
+            <p>
+                <%= commands[i].bouquet[j].amount + " " + commands[i].bouquet[j].name %>
+            </p>
+            <% } %>
+
+    </td>
+    <% }else{ %>
+        <td>
+        </td>
+        <% } %>
+            <% if (commands[i].custom) { %>
+                <td>
+                    <% for (var j=0; j < commands[i].custom.length; j++) { %>
+                        <p>
+                            <%= commands[i].custom[j].amount %>:
+                        </p>
+                        <% for (var k=0; k < commands[i].custom[j].content.length; k++) { %>
+                            <p>
+                                <%= commands[i].custom[j].content[k].amount +" "+commands[i].custom[j].content[k].flower_name%> </p>
+            <% } %> 
+        <% } %>
+    </td>
+<% }else{ %>
+    <td>
+</td>
+<% } %>
+        <td id=" <%=commands[i].id +"_status" %> "><%= commands[i].status %>
+                </td>
+                <td id="<%= commands[i].id +" _price" %> "><%= commands[i].price %>€ </td>

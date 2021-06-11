@@ -1,0 +1,8 @@
+img{
+    transform-origin: 0 0;
+    transition: transform .25s, visibility .25s ease-in;
+}
+
+img:hover{
+    transform: scale(1.5);
+}

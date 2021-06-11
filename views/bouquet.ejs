@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ('partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/zoom.css">
+    <link rel="stylesheet" type="text/css" href="/css/bouquet.css">
+</head>
+
+<body>
+    <%- include ('partials/header') %>
+        <div class="bouquet">
+            <div class="info">
+                <h4>
+                    <%= bouquet[0].name %>
+                </h4>
+                <img src="data:image/jpeg;base64,<%=  new Buffer(bouquet[0].image).toString('base64') %>"
+                    alt="Image Bouquet">
+                <p>
+                    <%= bouquet[0].price %>€
+                </p>
+                <form action="" method="post">
+                    <input type="number" name="amount" min="1" value="1" />
+                    <input type="submit" value="Add to card">
+                </form>
+            </div>
+            <div class="info">
+                <p>
+                    Content:
+                </p>
+                <ul>
+                    <% var i;for (i=0; i < bouquet.length; i++) { %>
+                        <li>
+                            <p>
+                                <%= bouquet[i].amount_flower +" "+ bouquet[i].flower_name %>
+                        </p>
+                    </li>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
